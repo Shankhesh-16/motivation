@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivation Boost</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .quote, .final-message {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            display: none;
+        }
+        .hidden-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hidden-button:hover {
+            background-color: #218838;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function showQuotes() {
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('motivateButton').style.display = 'none';
+            
+            let quotes = document.getElementsByClassName('quote');
+            for (let i = 0; i < quotes.length; i++) {
+                quotes[i].style.display = 'block';
+            }
+            
+            document.getElementById('clickHereButton').style.display = 'block';
+        }
+
+        function showFinalMessage() {
+            document.getElementById('quotesContainer').style.display = 'none';
+            document.getElementById('clickHereButton').style.display = 'none';
+            document.getElementById('finalMessage').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1 id="question">Feeling down? Feeling sad? Feeling tired?</h1>
+    <button id="motivateButton" onclick="showQuotes()">Want to feel motivated?</button>
+    
+    <div id="quotesContainer">
+        <div class="quote">"Follow your 'PLAN' not your 'Mood' - CA Pahal Patni"</div>
+        <div class="quote">"Choose your 'STRUGGLE' daily"</div>
+        <div class="quote">"Nobody wants to work hard, you do it anyway because that's what you 'SHOULD' do"</div>
+    </div>
+    
+    <button id="clickHereButton" class="hidden-button" onclick="showFinalMessage()">Click here</button>
+    
+    <div id="finalMessage" class="final-message">
+        Remember all the sacrifices you made, remind yourself the promise you made to yourself. It would all be worth it in the end.<br><br>
+        "SWEAT MORE IN TRAINING AND BLEED LESS IN WAR"<br><br>
+        Remind yourself this is the only way for our <i>Milele</i><br><br>
+        - Batman
+    </div>
+</body>
+</html>
