@@ -23,26 +23,14 @@
             font-weight: bold;
             color: #444;
         }
-        .quote, .motivational-images {
+        .motivational-images, #countdown {
             font-size: 24px;
             font-weight: bold;
             margin: 20px 0;
             display: none;
         }
-        .hidden-button {
-            display: none;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #ff6f61;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .hidden-button:hover {
-            background-color: #e65c50;
+        #countdown {
+            color: red;
         }
         button {
             padding: 10px 20px;
@@ -71,7 +59,17 @@
             document.getElementById('question').style.display = 'none';
             document.getElementById('motivateButton').style.display = 'none';
             document.getElementById('motivationalImages').style.display = 'block';
+            document.getElementById('countdown').style.display = 'block';
         }
+        
+        function updateCountdown() {
+            const targetDate = new Date("May 2, " + new Date().getFullYear());
+            const today = new Date();
+            const timeDiff = targetDate - today;
+            const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').innerText = `Days until May 2: ${daysRemaining}`;
+        }
+        window.onload = updateCountdown;
     </script>
 </head>
 <body>
@@ -87,6 +85,8 @@
     </h1>
     <button id="motivateButton" onclick="showQuotes()">Want to feel motivated?</button>
     
+    <div id="countdown"></div>
+    
     <div id="motivationalImages" class="motivational-images">
         <img src="MQ1.png" alt="Motivational Quote 1">
         <img src="MQ2.png" alt="Motivational Quote 2">
@@ -94,6 +94,8 @@
         <img src="MQ4.png" alt="Motivational Quote 4">
     </div>
 </body>
+</html>
+
 </html>
 
 
