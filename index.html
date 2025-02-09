@@ -23,7 +23,7 @@
             font-weight: bold;
             color: #444;
         }
-        .motivational-images, .manifestation {
+        .motivational-images, .manifestation, .countdown {
             font-size: 24px;
             font-weight: bold;
             margin: 20px 0;
@@ -55,7 +55,6 @@
             font-size: 20px;
             color: yellow;
             font-weight: bold;
-            margin-bottom: 20px;
             font-family: 'Garamond', serif;
         }
     </style>
@@ -65,6 +64,8 @@
             document.getElementById('motivateButton').style.display = 'none';
             document.getElementById('motivationalImages').style.display = 'block';
             document.getElementById('clickHereButton').style.display = 'block';
+            document.getElementById('countdown').style.display = 'block';
+            calculateCountdown();
         }
         function showManifestation() {
             document.getElementById('manifestation').style.display = 'block';
@@ -77,7 +78,6 @@
             const daysRemaining = Math.ceil(difference / (1000 * 60 * 60 * 24));
             document.getElementById('countdown').innerText = `Days until exams: ${daysRemaining}`;
         }
-        window.onload = calculateCountdown;
     </script>
 </head>
 <body>
