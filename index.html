@@ -23,14 +23,11 @@
             font-weight: bold;
             color: #444;
         }
-        .motivational-images, #countdown {
+        .motivational-images, .manifestation {
             font-size: 24px;
             font-weight: bold;
             margin: 20px 0;
             display: none;
-        }
-        #countdown {
-            color: red;
         }
         button {
             padding: 10px 20px;
@@ -41,6 +38,7 @@
             cursor: pointer;
             border-radius: 5px;
             font-family: 'Poppins', sans-serif;
+            margin: 10px;
         }
         button:hover {
             background-color: #4a54e1;
@@ -53,23 +51,33 @@
             margin: 10px;
             border-radius: 10px;
         }
+        .countdown {
+            font-size: 20px;
+            color: yellow;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: 'Garamond', serif;
+        }
     </style>
     <script>
         function showQuotes() {
             document.getElementById('question').style.display = 'none';
             document.getElementById('motivateButton').style.display = 'none';
             document.getElementById('motivationalImages').style.display = 'block';
-            document.getElementById('countdown').style.display = 'block';
+            document.getElementById('clickHereButton').style.display = 'block';
         }
-        
-        function updateCountdown() {
-            const targetDate = new Date("May 2, " + new Date().getFullYear());
-            const today = new Date();
-            const timeDiff = targetDate - today;
-            const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-            document.getElementById('countdown').innerText = `Days until May 2: ${daysRemaining}`;
+        function showManifestation() {
+            document.getElementById('manifestation').style.display = 'block';
+            document.getElementById('clickHereButton').style.display = 'none';
         }
-        window.onload = updateCountdown;
+        function calculateCountdown() {
+            const targetDate = new Date("May 2, " + new Date().getFullYear()).getTime();
+            const currentDate = new Date().getTime();
+            const difference = targetDate - currentDate;
+            const daysRemaining = Math.ceil(difference / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').innerText = `Days until exams: ${daysRemaining}`;
+        }
+        window.onload = calculateCountdown;
     </script>
 </head>
 <body>
@@ -85,7 +93,7 @@
     </h1>
     <button id="motivateButton" onclick="showQuotes()">Want to feel motivated?</button>
     
-    <div id="countdown"></div>
+    <div id="countdown" class="countdown"></div>
     
     <div id="motivationalImages" class="motivational-images">
         <img src="MQ1.png" alt="Motivational Quote 1">
@@ -93,10 +101,16 @@
         <img src="MQ3.png" alt="Motivational Quote 3">
         <img src="MQ4.png" alt="Motivational Quote 4">
     </div>
+    
+    <button id="clickHereButton" onclick="showManifestation()" style="display: none;">Click here now!</button>
+    
+    <div id="manifestation" class="manifestation">
+        <img src="manifestation.png" alt="Manifestation Image" style="width: 300px; border-radius: 10px;">
+        <p class="italic-text" style="font-size: 20px; font-weight: bold; font-family: 'Garamond', serif;">Remember this moment, you never thought you would be attending a Coldplay concert and here you were now, this is the power of manifestation. Take a deep breath..... Now remember we have manifested of becoming a Chartered Accountant, time to make it a reality you have it in you to do it, work so hard that you should never have a second's regret that only if I would have studied that day/night and didn't up.</p>
+    </div>
 </body>
 </html>
 
-</html>
 
 
 
