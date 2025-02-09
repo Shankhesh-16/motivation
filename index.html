@@ -6,21 +6,24 @@
     <title>Motivation Boost</title>
     <style>
         body {
-            background-color: white;
+            background-color: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             flex-direction: column;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             padding: 20px;
+            color: #333;
         }
         h1 {
-            font-size: 24px;
+            font-size: 26px;
             margin-bottom: 20px;
+            font-weight: bold;
+            color: #444;
         }
-        .quote, .final-message {
+        .quote, .final-message, .motivational-images {
             font-size: 24px;
             font-weight: bold;
             margin: 20px 0;
@@ -31,26 +34,36 @@
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #28a745;
+            background-color: #ff6f61;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
         }
         .hidden-button:hover {
-            background-color: #218838;
+            background-color: #e65c50;
         }
         button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #007BFF;
+            background-color: #5c67f2;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #4a54e1;
+        }
+        .italic-text {
+            font-style: italic;
+        }
+        .motivational-images img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
         }
     </style>
     <script>
@@ -66,15 +79,24 @@
             document.getElementById('clickHereButton').style.display = 'block';
         }
 
-        function showFinalMessage() {
+        function showMotivationalImages() {
             document.getElementById('quotesContainer').style.display = 'none';
             document.getElementById('clickHereButton').style.display = 'none';
-            document.getElementById('finalMessage').style.display = 'block';
+            document.getElementById('motivationalImages').style.display = 'block';
         }
     </script>
 </head>
 <body>
-    <h1 id="question">Feeling down? Feeling sad? Feeling tired?</h1>
+    <h1 id="question">
+        <span class="italic-text">Cause sometimes you just feel tired</span><br>
+        <span class="italic-text">Feel weak, and when you feel weak</span><br>
+        <span class="italic-text">You feel like you wanna just give up</span><br>
+        But you gotta search within you<br>
+        Try to find that inner strength and just pull that shit out of you<br>
+        And get that motivation to not give up<br>
+        And not be a quitter<br>
+        No matter how bad you wanna just fall flat on your face and collapse
+    </h1>
     <button id="motivateButton" onclick="showQuotes()">Want to feel motivated?</button>
     
     <div id="quotesContainer">
@@ -83,13 +105,14 @@
         <div class="quote">"Nobody wants to work hard, you do it anyway because that's what you 'SHOULD' do"</div>
     </div>
     
-    <button id="clickHereButton" class="hidden-button" onclick="showFinalMessage()">Click here</button>
+    <button id="clickHereButton" class="hidden-button" onclick="showMotivationalImages()">Click here</button>
     
-    <div id="finalMessage" class="final-message">
-        Remember all the sacrifices you made, remind yourself the promise you made to yourself. It would all be worth it in the end.<br><br>
-        "SWEAT MORE IN TRAINING AND BLEED LESS IN WAR"<br><br>
-        Remind yourself this is the only way for our <i>Milele</i><br><br>
-        - Batman
+    <div id="motivationalImages" class="motivational-images">
+        <img src="https://i.imgur.com/HJPOdRB.png" alt="Motivational Quote 1">
+        <img src="https://i.imgur.com/83REHMB.png" alt="Motivational Quote 2">
+        <img src="https://i.imgur.com/hTwM0Zp.png" alt="Motivational Quote 3">
+        <img src="https://i.imgur.com/NYgdbJh.png" alt="Motivational Quote 4">
     </div>
 </body>
 </html>
+
